@@ -290,6 +290,7 @@
             text-align: center;
         } */
 
+        /* Center contact form horizontally and vertically */
 
         footer {
             background: linear-gradient(90deg, #333, #555);
@@ -616,7 +617,7 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="product-card card h-100">
-            <img src="https://source.unsplash.com/featured/?milk-bottle,glass" class="card-img-top" alt="Glass bottle fresh milk">
+            <!-- <img src="https://source.unsplash.com/featured/?milk-bottle,glass" class="card-img-top" alt="Glass bottle fresh milk"> -->
             <div class="card-body text-center">
               <div class="product-title">Fresh Milk — 300 ml</div>
               <div class="price">Rs. 25</div>
@@ -628,7 +629,7 @@
 
         <div class="col-md-4">
           <div class="product-card card h-100">
-            <img src="https://source.unsplash.com/featured/?milk-bottle,500ml" class="card-img-top" alt="500 ml milk bottle">
+            <!-- <img src="https://source.unsplash.com/featured/?milk-bottle,500ml" class="card-img-top" alt="500 ml milk bottle"> -->
             <div class="card-body text-center">
               <div class="product-title">Fresh Milk — 500 ml</div>
               <div class="price">Rs. 35</div>
@@ -640,7 +641,7 @@
 
         <div class="col-md-4">
           <div class="product-card card h-100">
-            <img src="https://source.unsplash.com/featured/?milk-bottle,1l" class="card-img-top" alt="1 liter milk bottle">
+            <!-- <img src="https://source.unsplash.com/featured/?milk-bottle,1l" class="card-img-top" alt="1 liter milk bottle"> -->
             <div class="card-body text-center">
               <div class="product-title">Fresh Milk — 1 L</div>
               <div class="price">Rs. 69</div>
@@ -731,21 +732,17 @@
                 </div>
                 <button type="submit" class="btn btn-custom">Send Message</button>
             </form> -->
-            <form id="whatsappForm" class="p-3 bg-light rounded">
-    <h4 class="mb-3">Send Us a Message</h4>
 
-    <input type="text" id="name" class="form-control mb-2" placeholder="Your Name" required>
 
-    <input type="text" id="phone" class="form-control mb-2" placeholder="Your Phone Number" required>
-
-    <textarea id="message" class="form-control mb-2" placeholder="Your Message" rows="3" required></textarea>
-
-    <button type="button" class="btn btn-success w-100" onclick="sendToWhatsApp()">
-        Send on WhatsApp
-    </button>
-</form>
-
-            <!-- <form id="whatsappForm">
+            <form id="whatsappForm" style="
+                max-width: 500px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 20px;
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            ">
   <div class="mb-3">
     <label class="form-label">Your Name</label>
     <input type="text" id="name" class="form-control" required>
@@ -776,7 +773,7 @@
   </div>
 
   <button type="submit" class="btn btn-custom">Submit</button>
-</form> -->
+</form>
 
         </div>
     </section>
@@ -813,7 +810,7 @@
             });
         });
     </script>
-    <!-- <script>
+    <script>
 document.getElementById("whatsappForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -835,8 +832,8 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
 
     window.open(url, "_blank").focus();
 });
-</script> -->
-<script>
+</script>
+<!-- <script>
 function sendToWhatsApp() {
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
@@ -854,7 +851,7 @@ function sendToWhatsApp() {
 
     window.open(url, "_blank");
 }
-</script>
+</script> -->
 
 
 </body>
