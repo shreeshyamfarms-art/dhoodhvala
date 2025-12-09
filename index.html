@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Shyam Farms - Fresh Dairy in Glass Bottles</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- SEO and Accessibility Meta Tags -->
+    <meta name="description" content="Fresh, organic dairy products delivered in hygienic glass bottles. Eco-friendly, healthy, and straight from the farm.">
+    <meta property="og:title" content="PureMilk Home Delivery - Fresh Dairy in Glass Bottles">
+    <meta property="og:description" content="Organic dairy delivered in hygienic glass bottles. Healthy, eco-friendly, and fresh from local farms.">
+    <meta property="og:image" content="https://source.unsplash.com/featured/?milk-bottle">
+    <meta property="og:url" content="https://puremilk.com">
+    <style>
+        :root{
+      --farm-green: #4CAF50;
+      --farm-orange: #f57c00;
+      --farm-purple: #6a1b9a;
+      --farm-cream: #fff9f2;
+      --text-dark: #2b2b2b;
+      --muted: #6b6b6b;
+    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .navbar {
+            background: linear-gradient(90deg, #f38303, #f7c548);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .nav-link{ color: rgba(255,255,255,0.95) !important; font-weight:600; }
+        
+        
+  /* NAVBAR
+
+    .navbar{ background: linear-gradient(90deg,var(--farm-green), #45d64c); box-shadow: 0 6px 18px rgba(201, 169, 169, 0.12); }
+    .navbar .navbar-brand{ font-weight:700; letter-spacing:0.5px; color:#fff; }
+    .nav-link{ color: rgba(255,255,255,0.95) !important; font-weight:600; } */
+
+        
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 30px;
+      align-items: center;
+      padding: 90px 16px 40px;
+      max-width:1200px;
+      margin: 0 auto;
+    }
+
+    /* Left: content */
+    .hero-left h1{
+      color: var(--farm-orange);
+      font-size: clamp(36px, 6vw, 72px);
+      line-height:0.95;
+      font-weight:800;
+      margin:0 0 10px;
+      text-transform:uppercase;
+      letter-spacing: 1px;
+    }
+    .ribbon {
+      display:inline-block;
+      background: var(--farm-purple);
+      color:#fff;
+      padding:8px 16px;
+      border-radius:10px;
+      font-weight:700;
+      margin: 10px 0 18px;
+      box-shadow: 0 6px 18px rgba(223, 160, 41, 0.12);
+    }
+    .hero-left p.lead {
+      font-size:1.05rem;
+      color:var(--muted);
+      margin-bottom: 16px;
+    }
+    .hero-left .features { margin-top: 12px; }
+    .hero-left .features li { margin:8px 0; font-weight:600; color:#3b3b3b; }
+
+    /* Right: poster / bottle */
+    .hero-right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      padding:10px;
+    }
+    .poster {
+      justify-items: right;
+      width:100%;
+      max-width:380px;
+      border-radius:8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      border: 6px solid #fff;
+      background: #fff;
+    }
+   
+        /* .hero-video {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+        .hero-overlay h1 { font-size: 4rem; font-weight: 600; margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
+        .hero-overlay p { font-size: 1.5rem; margin-bottom: 2rem; }
+        .btn-custom {
+            background: linear-gradient(45deg, #FF9800, #FFB74D);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 35px;
+            font-weight: 500;
+            box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 152, 0, 0.5); } */
+
+        .hero-carousel .carousel-item {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-carousel .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* background: rgba(217, 186, 73, 0.5); */
+            /* background: rgba(32, 32, 30, 0.5); */
+            background: rgba(217, 186, 73, 0.5);
+            z-index: 1;
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgb(24, 5, 5);
+            z-index: 2;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+        .hero-content h1 { font-size: 4rem; font-weight: 600; margin-bottom: 1rem; }
+        .hero-content p { font-size: 1.5rem; margin-bottom: 2rem; }
+        .btn-custom {
+            background: linear-gradient(45deg, #FF9800, #FFB74D);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 35px;
+            font-weight: 500;
+            box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 152, 0, 0.5); }
+        .stats-section {
+            background: linear-gradient(135deg, #66BB6A, #4CAF50);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        /* .stat-item { margin-bottom: 20px; }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 600;
+            display: block;
+            animation: countUp 2s ease-out;
+        } */
+
+        /* Stats Section */
+.stats-section {
+    background: #f5dba4; /* soft warm cream like your poster */
+    padding: 60px 0;
+    border-radius: 12px;
+    margin: 40px 0;
+}
+
+/* Heading */
+.stats-section h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    color: #050403; /* orange theme */
+    margin-bottom: 40px;
+}
+
+/* Stat Item Box */
+.stat-item {
+    text-align: center;
+    padding: 20px 10px;
+    transition: 0.3s ease;
+}
+
+/* Main Text */
+.stat-number {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: #5e35b1; /* purple theme used in ribbon */
+    margin-bottom: 8px;
+}
+
+/* Sub Text */
+.stat-item p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+/* Hover Effect */
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 20px;
+    }
+    .stats-section h2 {
+        font-size: 26px;
+    }
+}
+
+        @keyframes countUp { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+        .feature-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
+        .product-card .card-body { padding: 20px; }
+        .testimonial-carousel .carousel-item { padding: 40px; }
+        .testimonialCarousel{
+            box-sizing: border-box;
+        }
+        .testimonial-card {
+            background: #fff;
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+        }
+        /* footer {
+            background: linear-gradient(90deg, #333, #555);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        } */
+
+
+        footer {
+            background: linear-gradient(90deg, #333, #555);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            color: #555;
+            margin: 0 10px;
+            transition: 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #007bff;
+            transform: scale(1.15);
+        }
+
+
+        /* Delivery banner */
+    .delivery-banner{
+      margin: 30px auto;
+      max-width: 1200px;
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(245,124,0,0.08), rgba(76,175,80,0.04));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .delivery-banner .left { font-weight:700; color:var(--farm-orange); }
+    .delivery-banner .right { color:var(--muted); }
+
+
+        .social-icon { font-size: 2rem; margin: 0 20px; color: #66BB6A; transition: all 0.3s ease; }
+        .social-icon:hover { color: #FFB74D; transform: scale(1.2); }
+        img { max-width: 100%; height: auto; border-radius: 10px; }
+        /* Accessibility improvements */
+        /* .carousel-control-prev, .carousel-control-next { background: rgba(0,0,0,0.5); border-radius: 20%;
+        color: black; } */
+        .carousel-control-prev, .carousel-control-next { filter: invert(1); }
+
+        /* small utilities */
+
+.btn-outline-green {
+    border: 2px solid #4CAF50;
+    color: white;
+    background: var(--farm-green);
+    transition: 0.3s ease;
+}
+
+/* Hover effect (optional) */
+.btn-outline-green:hover {
+    border-color: #66BB6A;
+    background: transparent;
+    color: black;
+    border-radius: 50px;
+}
+
+/* CLICK and FOCUS effect → ONLY BORDER, NO GREEN BACKGROUND */
+.btn-outline-green:active,
+.btn-outline-green:focus {
+    background: transparent !important;
+    color: #4CAF50 !important;
+    border: 2px solid #4CAF50 important;
+    box-shadow: none important;
+}
+
+/* General Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+            .hero-left h1 { font-size: 48px; }
+            .poster { max-width: 300px; }
+            .delivery-banner { flex-direction: column; text-align: center; }
+            .stats-section h2 { font-size: 26px; }
+            .stat-number { font-size: 18px; }
+        }
+        @media (max-width: 576px) {
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .btn-custom { padding: 12px 30px; font-size: 14px; }
+            .feature-card, .product-card { padding: 20px; }
+        }
+
+    </style>
+</head>
+<body>
+    Navbar
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Shree Shyam Farms</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link"
+            href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Video Section
+    <section class="hero-video">
+        <video autoplay muted loop poster="https://source.unsplash.com/featured/?farm-cows" aria-label="Video of cows on a farm">
+            <source src="https://www.pexels.com/video/cows-on-a-grass-field-854193/" type="video/mp4">  <!-- Replaced with a relevant free stock video; replace with your AI-generated URL if available -->
+            
+        <!-- </video>
+        <div class="hero-overlay">
+            <div>
+                <h1>Fresh from the Farm</h1>
+                <p>Organic dairy delivered in hygienic glass bottles.</p>
+                <a href="#products" class="btn btn-custom btn-lg">Shop Now</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/featured/?dairy-farm');">
+                    <div class="hero-content">
+                        <h1>Fresh from the Farm</h1>
+                        <p>Organic dairy delivered in hygienic glass bottles.</p>
+                        <a href="#products" class="btn btn-custom btn-lg">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-color: rgba(225, 194, 80, 0.5);">
+                    <div class="hero-content">
+                        <h1>Hygienic & Sustainable</h1>
+                        <p>Pasteurized milk in reusable bottles for a healthier you.</p>
+                        <a href="#products" class="btn btn-custom btn-lg">Order Today</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://source.unsplash.com/featured/?organic-dairy');">
+                    <div class="hero-content">
+                        <h1>Delivered to Your Door</h1>
+                        <p>Fresh, local dairy with eco-friendly packaging.</p>
+                        <a href="#products" class="btn btn-custom btn-lg">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+
+    <div class="hero">
+      <div class="hero-left">
+        <!-- <h1>Shree<br>Shyam<br>Farms</h1> -->
+
+        <h1>Shree Shyam Farms </h1>
+        <div class="ribbon">FARM FRESH &amp; NO PLASTIC USE</div>
+
+        <p class="lead">Glass bottles of pure milk — straight from the farm to your home. Hygienically packed, eco-friendly bottles, and daily delivery across the city.</p>
+
+        <ul class="features list-unstyled">
+          <li>• Pasteurized to high safety standards</li>
+          <li>• Reusable, eco-friendly glass bottles</li>
+          <li>• Fresh Cow &amp; Buffalo milk — daily delivery</li>
+        </ul>
+
+        <div style="margin-top:18px;">
+          <a href="#products" class="btn btn-custom me-2">Shop Fresh Milk</a>
+          <a href="#contact" class="btn btn-outline-green">Contact Us</a>
+        </div>
+      </div>
+
+        <div class="hero-right">
+        <img class="poster" src="WhatsApp Image 2025-12-09 at 19.06.19.jpeg" alt="Shree Shyam Farms poster showing bottle and price" onerror="this.style.display='none'">
+        </div>
+    </div>
+
+    </section>
+
+    <!-- Stats Section -->
+    <!-- <section class="stats-section">
+        <div class="container">
+            <h2 class="mb-4">Farm Fresh Stats</h2>
+            <div class="row">
+                <div class="col-md-3 stat-item">
+                    <span class="stat-number">500+</span>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <span class="stat-number">10K+</span>
+                    <p>Bottles Delivered</p>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <span class="stat-number">100%</span>
+                    <p>Organic & Hygienic</p>
+                </div>
+                <div class="col-md-3 stat-item">
+                    <span class="stat-number">24/7</span>
+                    <p>Delivery Service</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="stats-section">
+    <div class="container">
+        <h2 class="mb-4">Farm Fresh Stats</h2>
+        <div class="row">
+
+            <div class="col-md-3 stat-item">
+                <span class="stat-number">Fresh Daily</span>
+                <p>Morning Farm Extraction</p>
+            </div>
+
+            <div class="col-md-3 stat-item">
+                <span class="stat-number">Zero Adulteration</span>
+                <p>Pure, Unmixed Milk</p>
+            </div>
+
+            <div class="col-md-3 stat-item">
+                <span class="stat-number">Glass Bottles</span>
+                <p>Eco-Friendly Packaging</p>
+            </div>
+
+            <div class="col-md-3 stat-item">
+                <span class="stat-number">Farm Direct</span>
+                <p>Delivered Within Hours</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Features Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Why Choose US ?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="bi bi-shield-check display-4 text-success mb-3" aria-hidden="true"></i>
+                        <h5>Healthy & Hygienic</h5>
+                        <p>Pasteurized at 72°C for 15 seconds. Bottles autoclaved for safety.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="bi bi-recycle display-4 text-success mb-3" aria-hidden="true"></i>
+                        <h5>Eco-Friendly</h5>
+                        <p>Reusable glass bottles reduce waste—return for free cleaning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="bi bi-truck display-4 text-success mb-3" aria-hidden="true"></i>
+                        <h5>Fresh Delivery</h5>
+                        <p>Direct from local farms with chilled, on-time service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- DELIVERY BANNER -->
+  <div class="delivery-banner container">
+    <div class="left"><i class="bi bi-truck"></i> Daily Home Delivery Available</div>
+    <div class="right muted">Free bottle pickup &amp; cleaning | Contact: <strong>6269112243</strong></div>
+  </div>
+
+    <!-- Products Section
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Our Dairy Products</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/featured/?milk-bottle" alt="Glass bottle of fresh milk on a farm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fresh Milk (300 ml)</h5>
+                            <p class="card-text">Rs. 25 <br> Pasteurized and chilled in glass.</p>
+                            <button class="btn btn-custom add-to-cart" data-product="Fresh Milk (1L)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/featured/?yogurt" alt="Glass bottle of fresh milk on a farm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fresh Milk (500 ml)</h5>
+                            <p class="card-text">Rs. 35 <br> Probiotic-rich and hygienic.</p>
+                            <button class="btn btn-custom add-to-cart" data-product="Organic Yogurt (500g)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/featured/?cheese" alt="Glass bottle of fresh milk on a farm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fresh Milk (1L)</h5>
+                            <p class="card-text">Rs. 69 <br>  Fresh from the farm.</p>
+                            <button class="btn btn-custom add-to-cart" data-product="Artisan Cheese (200g)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+      <!-- PRODUCTS -->
+  <section id="products" class="products">
+    <div class="container">
+      <h2 class="fw-bold mb-4" style="text-align: center;">Our Dairy Products</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="product-card card h-100">
+            <img src="https://source.unsplash.com/featured/?milk-bottle,glass" class="card-img-top" alt="Glass bottle fresh milk">
+            <div class="card-body text-center">
+              <div class="product-title">Fresh Milk — 300 ml</div>
+              <div class="price">Rs. 25</div>
+              <p class="muted mb-2">Pasteurized &amp; chilled in glass bottles</p>
+              <button class="btn btn-custom add-to-cart" data-product="Fresh Milk 300ml">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="product-card card h-100">
+            <img src="https://source.unsplash.com/featured/?milk-bottle,500ml" class="card-img-top" alt="500 ml milk bottle">
+            <div class="card-body text-center">
+              <div class="product-title">Fresh Milk — 500 ml</div>
+              <div class="price">Rs. 35</div>
+              <p class="muted mb-2">Probiotic-rich and hygienic</p>
+              <button class="btn btn-custom add-to-cart" data-product="Fresh Milk 500ml">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="product-card card h-100">
+            <img src="https://source.unsplash.com/featured/?milk-bottle,1l" class="card-img-top" alt="1 liter milk bottle">
+            <div class="card-body text-center">
+              <div class="product-title">Fresh Milk — 1 L</div>
+              <div class="price">Rs. 69</div>
+              <p class="muted mb-2">Fresh from the farm</p>
+              <button class="btn btn-custom add-to-cart" data-product="Fresh Milk 1L">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+
+     <!-- PRICING (larger table) -->
+  <section id="pricing" class="container mb-5">
+    <h2 class="fw-bold mb-3" style="text-align: center;">Price List</h2>
+    <br>
+    <div class="table-responsive shadow-sm rounded">
+      <table class="table text-center table-bordered mb-0">
+        <thead style="background:var(--farm-purple); color:#fff;">
+          <tr>
+            <th>Quantity</th>
+            <th>Cow Milk (Rs.)</th>
+            <th>Buffalo Milk (Rs.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1 Liter</td><td>69</td><td>75</td></tr>
+          <tr><td>500 ml</td><td>35</td><td>40</td></tr>
+          <tr><td>300 ml</td><td>25</td><td>27</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">What Our Customers Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <p>"The milk in glass bottles is so fresh and hygienic—Freshness that you can literally smell and taste!"</p>
+                            <cite>- Tarun P.</cite>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p>"No plastic, eco-friendly bottles. Delivery is always on time!"</p>
+                            <cite>- Abhishek S.</cite>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p>"Milk quality is amazing — tastes just like fresh farm milk!"</p>
+                            <cite>- Aman K.</cite>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next testimonial">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Contact Us</h2>
+            <!-- <form action="https://formspree.io/f/your-form-id" method="POST" class="mx-auto" style="max-width: 600px;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom">Send Message</button>
+            </form> -->
+            <form id="whatsappForm" class="p-3 bg-light rounded">
+    <h4 class="mb-3">Send Us a Message</h4>
+
+    <input type="text" id="name" class="form-control mb-2" placeholder="Your Name" required>
+
+    <input type="text" id="phone" class="form-control mb-2" placeholder="Your Phone Number" required>
+
+    <textarea id="message" class="form-control mb-2" placeholder="Your Message" rows="3" required></textarea>
+
+    <button type="button" class="btn btn-success w-100" onclick="sendToWhatsApp()">
+        Send on WhatsApp
+    </button>
+</form>
+
+            <!-- <form id="whatsappForm">
+  <div class="mb-3">
+    <label class="form-label">Your Name</label>
+    <input type="text" id="name" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Phone Number</label>
+    <input type="text" id="phone" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Select Product</label>
+    <select id="product" class="form-control" required>
+      <option value="">-- Choose Product --</option>
+      <option value="Cow Milk 300ml">Cow Milk 300ml</option>
+      <option value="Cow Milk 500ml">Cow Milk 500ml</option>
+      <option value="Cow Milk 1 Litre">Cow Milk 1 Litre</option>
+      <option value="Buffalo Milk 300ml">Buffalo Milk 300ml</option>
+      <option value="Buffalo Milk 500ml">Buffalo Milk 500ml</option>
+      <option value="Buffalo Milk 1 Litre">Buffalo Milk 1 Litre</option>
+      
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Quantity</label>
+    <input type="number" id="qty" class="form-control" min="1" required>
+  </div>
+
+  <button type="submit" class="btn btn-custom">Submit</button>
+</form> -->
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Shree Shyam Farms Home Delivery. All rights reserved.</p>
+            <div>
+                <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/doodhvala01?igsh=MW43cmw1YzJ2dTM5cA==" target="_blank"  class="social-icon" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+            <p>Contact: www.dhoodhvala.com | Phone: (+91) 6269112243 </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Simple Cart Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = this.getAttribute('data-product');
+                    cart.push(product);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    alert(`${product} added to cart!`);
+                });
+            });
+        });
+    </script>
+    <!-- <script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let product = document.getElementById("product").value;
+    let qty = document.getElementById("qty").value;
+
+    let whatsappNumber = "918463896155"; // YOUR NUMBER
+
+    let url =
+      "https://wa.me/" + whatsappNumber + 
+      "?text=" +
+      "🛒 *New Product Order*%0A%0A" +
+      "*Name:* " + name + "%0A" +
+      "*Phone:* " + phone + "%0A" +
+      "*Product:* " + product + "%0A" +
+      "*Quantity:* " + qty;
+
+    window.open(url, "_blank").focus();
+});
+</script> -->
+<script>
+function sendToWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappNumber = "8463896155"; // ← Your WhatsApp Number
+
+    let url =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      "Name: " + name + "%0a" +
+      "Phone: " + phone + "%0a" +
+      "Message: " + message;
+
+    window.open(url, "_blank");
+}
+</script>
+
+
+</body>
+</html>
